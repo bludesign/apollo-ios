@@ -9,7 +9,8 @@ let package = Package(
     .iOS(.v12),
     .macOS(.v10_14),
     .tvOS(.v12),
-    .watchOS(.v5)
+    .watchOS(.v5),
+    .visionOS(.v1)
   ],
   products: [
     .library(name: "Apollo", targets: ["Apollo"]),
@@ -21,9 +22,7 @@ let package = Package(
     .plugin(name: "InstallCLI", targets: ["Install CLI"])
   ],
   dependencies: [
-    .package(
-      url: "https://github.com/stephencelis/SQLite.swift.git",
-      .upToNextMajor(from: "0.13.1")),
+    .package(url: "https://github.com/bludesign/SQLite.swift.git", .branch("master"))
   ],
   targets: [
     .target(
